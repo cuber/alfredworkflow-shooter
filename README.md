@@ -15,7 +15,7 @@ It's So Easy to use.
 ![alt tag](http://ww4.sinaimg.cn/large/68bd1777gw1efm7rghw93j20lh0cu76g.jpg)
 
 # download
-* [direct](https://github.com/cuber/alfredworkflow-shooter/raw/master/release/alfredworkflow.Shooter.alfredworkflow)
+* [Click Me](https://github.com/cuber/alfredworkflow-shooter/raw/master/release/alfredworkflow.Shooter.alfredworkflow)
 
 # thanks to 
 * [shooter.cn](https://docs.google.com/document/d/1ufdzy6jbornkXxsD-OGl3kgWa4P9WO5NZb6_QYZiGI0/preview)
