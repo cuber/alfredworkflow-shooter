@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.cube.shooter.downloader</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>88DAF05C-4D4C-468A-B9F7-F988543B52C5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>74B9B330-EA08-4ECC-B43C-8BF78614A4EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B1556E4E-4A50-4D8F-A7AE-5C5B1229BFE2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88DAF05C-4D4C-468A-B9F7-F988543B52C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Cube</string>
+	<key>description</key>
+	<string>字幕下载</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Shooter</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>require_once ('down.php');
+down('{query}');</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>88DAF05C-4D4C-468A-B9F7-F988543B52C5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>射手字幕</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>74B9B330-EA08-4ECC-B43C-8BF78614A4EC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>sht</string>
+				<key>runningsubtext</key>
+				<string>加载中</string>
+				<key>script</key>
+				<string>tell application "Finder"
+    try
+        set pwd to (folder of the front window as alias)
+    on error
+        set pwd to (path to desktop folder as alias)
+    end try
+    set output to do shell script "php scan.php " &amp; quoted form of (POSIX path of pwd)
+end tell</string>
+				<key>subtext</key>
+				<string>从Shooter.cn下载字幕</string>
+				<key>title</key>
+				<string>查找当前Finder中的视频</string>
+				<key>type</key>
+				<integer>6</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B1556E4E-4A50-4D8F-A7AE-5C5B1229BFE2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>从射手网下载与当前 Finder 窗口目录中视频文件匹配的字幕</string>
+	<key>uidata</key>
+	<dict>
+		<key>74B9B330-EA08-4ECC-B43C-8BF78614A4EC</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>88DAF05C-4D4C-468A-B9F7-F988543B52C5</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>B1556E4E-4A50-4D8F-A7AE-5C5B1229BFE2</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://github.com/cuber/alfredworkflow-shooter</string>
+</dict>
+</plist>
