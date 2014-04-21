@@ -11,6 +11,7 @@ function sphash($file) {
     $str = fread($fp, 4096);
     $hash[] = md5($str);
   }
+  fclose($fp);
   return implode(";", $hash);
 }
 
@@ -22,8 +23,8 @@ function request($file) {
     'format'   => 'json',
     'lang'     => 'Chn&Eng'
   ));
-  $opts = array(  
-    'http' => array(  
+  $opts = array(
+    'http' => array(
       'method'  => "POST",
       'header'  => "Content-Type: application/x-www-form-urlencoded\r\n" .
                    "Content-Length: " . strlen($data) . "\r\n",
@@ -51,7 +52,7 @@ function down($file) {
   foreach ($group as $idx => $link)
   {
     if (!($sub  = file_get_contents($link))) continue;
-    $name = $file . "." . ($idx + 1) . "." . $ext; 
+    $name = $file . "." . ($idx + 1) . "." . $ext;
     if (!file_put_contents($name, $sub)) continue;
     $down[] = basename($name);
   }
