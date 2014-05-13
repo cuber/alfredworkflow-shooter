@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.cube.shooter.downloader</string>
-	<key>category</key>
-	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>88DAF05C-4D4C-468A-B9F7-F988543B52C5</key>
@@ -117,10 +115,13 @@ end tell</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>32</integer>
 				<key>script</key>
 				<string>require_once ('down.php');
-down('{query}');</string>
+down(&lt;&lt;&lt;ARG
+{query}
+ARG
+);</string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
